@@ -1,5 +1,5 @@
 """
-OpenClaw Duke - Main Orchestrator
+Perceval - Main Orchestrator
 Coordinates scraping, processing, and notification pipeline.
 """
 import time
@@ -28,17 +28,17 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
     handlers=[
-        logging.FileHandler("openclaw_duke.log"),
+        logging.FileHandler("perceval.log"),
         logging.StreamHandler(),
     ],
 )
-logger = logging.getLogger("openclaw-duke")
+logger = logging.getLogger("perceval")
 
 
 def run_pipeline():
     """Run the full scraping -> processing -> notification pipeline."""
     logger.info("=" * 60)
-    logger.info(f"Starting OpenClaw Duke pipeline at {datetime.now()}")
+    logger.info(f"Starting Perceval pipeline at {datetime.now()}")
     logger.info(f"Using LLM provider: {LLM_PROVIDER}")
     logger.info("=" * 60)
 
@@ -164,8 +164,8 @@ def run_pipeline():
 
 def run_scheduled():
     """Run the pipeline on a schedule."""
-    logger.info(f"OpenClaw Duke starting with {SCRAPE_INTERVAL_MINUTES}-minute interval")
-    send_status_message(f"OpenClaw Duke is online\\! Checking every {SCRAPE_INTERVAL_MINUTES} minutes\\.")
+    logger.info(f"Perceval starting with {SCRAPE_INTERVAL_MINUTES}-minute interval")
+    send_status_message(f"Perceval is online\\! Checking every {SCRAPE_INTERVAL_MINUTES} minutes\\.")
 
     # Run immediately on start
     run_pipeline()

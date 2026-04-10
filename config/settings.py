@@ -1,5 +1,5 @@
 """
-OpenClaw Duke - Configuration Settings
+Perceval - Configuration Settings
 """
 import os
 from dotenv import load_dotenv
@@ -22,7 +22,7 @@ TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
 SCRAPE_INTERVAL_MINUTES = int(os.getenv("SCRAPE_INTERVAL_MINUTES", "60"))
 
 # --- Database ---
-DB_PATH = os.getenv("DB_PATH", "data/openclaw_duke.db")
+DB_PATH = os.getenv("DB_PATH", "data/perceval.db")
 
 # --- Instagram Accounts to Monitor ---
 INSTAGRAM_ACCOUNTS = [

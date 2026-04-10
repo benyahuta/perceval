@@ -1,0 +1,20 @@
+[Unit]
+Description=Perceval - Event Tracker for Duke University
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/perceval
+ExecStart=/home/ubuntu/perceval/venv/bin/python main.py
+Restart=always
+RestartSec=30
+EnvironmentFile=/home/ubuntu/perceval/.env
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=perceval
+
+[Install]
+WantedBy=multi-user.target

@@ -1,5 +1,5 @@
 """
-Instagram scraper for OpenClaw Duke.
+Instagram scraper for Perceval.
 Uses multiple fallback methods to get recent posts from public Instagram accounts.
 """
 import re

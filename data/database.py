@@ -1,5 +1,5 @@
 """
-Database manager for OpenClaw Duke.
+Database manager for Perceval.
 Tracks events we've already seen and notified about to avoid duplicates.
 """
 import sqlite3

@@ -1,11 +1,11 @@
 #!/bin/bash
-# OpenClaw Duke - Setup & Deployment Script
+# Perceval - Setup & Deployment Script
 # Run this on your AWS Ubuntu server
 
 set -e
 
 echo "=========================================="
-echo "  OpenClaw Duke - Setup Script"
+echo "  Perceval - Setup Script"
 echo "=========================================="
 
 # Get the directory where the script is located
@@ -51,10 +51,10 @@ echo ""
 echo "[6/6] Installing systemd service..."
 
 # Update the service file with the actual path
-sed -i "s|/home/ubuntu/openclaw-duke|$SCRIPT_DIR|g" openclaw-duke.service
-sed -i "s|User=ubuntu|User=$(whoami)|g" openclaw-duke.service
+sed -i "s|/home/ubuntu/perceval|$SCRIPT_DIR|g" perceval.service
+sed -i "s|User=ubuntu|User=$(whoami)|g" perceval.service
 
-sudo cp openclaw-duke.service /etc/systemd/system/
+sudo cp perceval.service /etc/systemd/system/
 sudo systemctl daemon-reload
 
 echo ""
@@ -79,10 +79,10 @@ echo "  3. Test the pipeline:"
 echo "     source venv/bin/activate && python main.py --once"
 echo ""
 echo "  4. Start the service:"
-echo "     sudo systemctl enable openclaw-duke"
-echo "     sudo systemctl start openclaw-duke"
+echo "     sudo systemctl enable perceval"
+echo "     sudo systemctl start perceval"
 echo ""
 echo "  5. Check status:"
-echo "     sudo systemctl status openclaw-duke"
-echo "     journalctl -u openclaw-duke -f"
+echo "     sudo systemctl status perceval"
+echo "     journalctl -u perceval -f"
 echo ""

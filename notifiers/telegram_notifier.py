@@ -1,5 +1,5 @@
 """
-Telegram notification system for OpenClaw Duke.
+Telegram notification system for Perceval.
 Sends formatted event notifications via Telegram bot.
 """
 import logging
@@ -32,7 +32,7 @@ def send_event_notification(event: Dict) -> bool:
     emoji = CATEGORY_EMOJI.get(event.get("category", "other"), "📌")
     category_display = event.get("category", "other").replace("_", " ").title()
 
-    message = f"""{emoji} *New Event Alert!*
+    message = f"""{emoji} *New Event Alert\\!*
 
 *{_escape_md(event.get('title', 'Unknown Event'))}*
 
@@ -68,7 +68,7 @@ def send_daily_digest(events: list) -> bool:
 
 def send_status_message(message: str) -> bool:
     """Send a plain status message."""
-    return _send_telegram_message(f"🤖 OpenClaw Duke: {_escape_md(message)}")
+    return _send_telegram_message(f"🤖 Perceval: {_escape_md(message)}")
 
 
 def _send_telegram_message(text: str) -> bool:

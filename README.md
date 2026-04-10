@@ -1,4 +1,4 @@
-# 🦅 OpenClaw Duke
+# 🦅 Perceval
 
 An automated event tracker for Duke University. Monitors Instagram accounts, Duke event pages, and external competition sources for upcoming events related to startups, tech, business, and finance. Sends notifications via Telegram.
 
@@ -42,11 +42,11 @@ An automated event tracker for Duke University. Monitors Instagram accounts, Duk
 
 ```bash
 # Copy the project to your server (alongside merlin)
-scp -r openclaw-duke ubuntu@your-server:/home/ubuntu/
+scp -r perceval ubuntu@your-server:/home/ubuntu/
 
 # SSH in and run setup
 ssh ubuntu@your-server
-cd openclaw-duke
+cd perceval
 bash setup.sh
 ```
 
@@ -61,7 +61,7 @@ bash setup.sh
 1. Message your new bot (say anything like "hello")
 2. On the server:
 ```bash
-cd openclaw-duke
+cd perceval
 source venv/bin/activate
 python notifiers/telegram_notifier.py
 ```
@@ -84,21 +84,21 @@ python main.py --once
 ### 6. Run as Service
 
 ```bash
-sudo systemctl enable openclaw-duke
-sudo systemctl start openclaw-duke
+sudo systemctl enable perceval
+sudo systemctl start perceval
 ```
 
 ## Monitoring
 
 ```bash
 # Check status
-sudo systemctl status openclaw-duke
+sudo systemctl status perceval
 
 # View logs
-journalctl -u openclaw-duke -f
+journalctl -u perceval -f
 
 # View log file
-tail -f openclaw_duke.log
+tail -f perceval.log
 ```
 
 ## Configuration
