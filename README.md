@@ -1,4 +1,4 @@
-# hermes
+# Perceval
 
 A bot that finds startup, tech, business, and finance events at Duke and sends them to me on Telegram.
 
